@@ -79,15 +79,14 @@ The application is designed to demonstrate the performance benefits of parallel 
 ```
 src/
 ├── main/
-│   ├── java/gui/
-│   │   ├── Controller.java      # Main application logic
-│   │   ├── MainApp.java         # JavaFX application entry point
-│   │   ├── ImageProcessor.java  # Functional interface for image processing
-│   │   └── FilterType.java      # Enum for available filters
-│   └── resources/gui/
-│       ├── main_view.fxml       # UI layout
-│       └── dark-theme.css       # Dark mode styling
-Images/                          # Sample images for testing
+   ├── java/gui/
+   │   ├── Controller.java      # Main application logic
+   │   ├── MainApp.java         # JavaFX application entry point
+   │   ├── ImageProcessor.java  # Functional interface for image processing
+   │   └── FilterType.java      # Enum for available filters
+   └── resources/gui/
+       ├── main_view.fxml       # UI layout
+       └── dark-theme.css       # Dark mode styling
 ```
 
 ### Key Components
