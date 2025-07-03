@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Group?>
+<VBox xmlns="http://javafx.com/javafx/20.0.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.Controller" spacing="10" alignment="TOP_CENTER">
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+    <Label text="Welcome to the Java Image Processor!" style="-fx-font-size: 20px; -fx-font-weight: bold;" />
+    <HBox spacing="10" alignment="TOP_RIGHT">
+        <CheckBox fx:id="darkModeCheckBox" text="Dark Mode" />
+    </HBox>
+    <HBox spacing="20" alignment="CENTER_LEFT">
+        <Button fx:id="selectImageButton" text="Select Image" onAction="#onSelectImage" style="-fx-font-size: 14px; -fx-padding: 8 18;" />
+        <VBox spacing="2">
+            <Label text="Choose Image Filter:" />
+            <ComboBox fx:id="filterComboBox" promptText="Select Filter" />
+        </VBox>
+        <VBox spacing="2">
+            <Label text="Processing Type:" />
+            <HBox spacing="5">
+                <RadioButton fx:id="sequentialRadio" text="Sequential" onAction="#onModeChanged" selected="true" />
+                <RadioButton fx:id="parallelRadio" text="Parallel" onAction="#onModeChanged" />
+            </HBox>
+        </VBox>
+        <VBox spacing="2">
+            <Label text="Method of Parallelization:" />
+            <ComboBox fx:id="parallelMethodComboBox" promptText="Parallel Method" disable="true" />
+        </VBox>
+        <VBox spacing="2">
+            <Label text="Number of Threads:" />
+            <Spinner fx:id="threadCountSpinner" editable="true" disable="true" />
+        </VBox>
+        <Button fx:id="processButton" text="Process" onAction="#onProcess" style="-fx-font-size: 15px; -fx-padding: 10 24; -fx-background-color: #90ee90; -fx-font-weight: bold;" />
+        <ProgressBar fx:id="progressBar" prefWidth="300" managed="false" visible="false" />
+    </HBox>
+    <SplitPane orientation="HORIZONTAL" dividerPositions="0.5" VBox.vgrow="ALWAYS">
+        <VBox spacing="5" alignment="CENTER">
+            <Label text="Original Image" />
+            <ScrollPane fx:id="originalScrollPane" fitToWidth="true" fitToHeight="true" VBox.vgrow="ALWAYS">
+                <Group fx:id="originalImageGroup">
+                    <ImageView fx:id="originalImageView" preserveRatio="true" />
+                </Group>
+            </ScrollPane>
+        </VBox>
+        <VBox spacing="5" alignment="CENTER">
+            <Label text="Processed Image" />
+            <ScrollPane fx:id="processedScrollPane" fitToWidth="true" fitToHeight="true" VBox.vgrow="ALWAYS">
+                <Group fx:id="processedImageGroup">
+                    <ImageView fx:id="processedImageView" preserveRatio="true" />
+                </Group>
+            </ScrollPane>
+            <Button fx:id="saveImageButton" text="Save Image" onAction="#onSaveImage" />
+        </VBox>
+    </SplitPane>
+    <TextField fx:id="timeLabelField" text="Processing time: " editable="false" focusTraversable="false" style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-background-color: transparent; -fx-border-width: 0; -fx-padding: 8 0 8 0;" alignment="CENTER" />
+</VBox> 

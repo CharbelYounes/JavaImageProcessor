@@ -1,0 +1,33 @@
+/* Simple dark mode for JavaFX */
+.root {
+    -fx-base: #232323;
+    -fx-background: #232323;
+    -fx-background-color: #232323;
+    -fx-text-fill: #e0e0e0;
+}
+.label, .text, .combo-box, .radio-button, .check-box, .button, .spinner, .progress-bar {
+    -fx-text-fill: #e0e0e0;
+}
+.button, .combo-box, .spinner, .progress-bar {
+    -fx-background-color: #333333;
+    -fx-border-color: #444444;
+}
+.text-field, .combo-box, .spinner {
+    -fx-background-color: #232323;
+    -fx-text-fill: #e0e0e0;
+}
+.progress-bar {
+    -fx-accent: #4caf50;
+}
+#processButton {
+    -fx-background-color: #145a32 !important;
+    -fx-text-fill: #e0e0e0;
+    -fx-font-weight: bold;
+}
+.text-field#timeLabelField {
+    -fx-text-fill: #ffffff;
+}
+
+.time-label-blue-glow {
+    -fx-effect: dropshadow(gaussian, #2196f3, 16, 0.7, 0, 0);
+} 
